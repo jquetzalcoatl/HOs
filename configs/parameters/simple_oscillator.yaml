@@ -1,0 +1,7 @@
+t_start: 0.0  # start time
+num_points: 1000  # number of points to plot
+# t_end = 10.0  # end time
+# k = 1.0  # spring constant
+# m = 1.0  # mass
+# x0 = 1.0  # initial position
+# v0 = 0.0  # initial velocity

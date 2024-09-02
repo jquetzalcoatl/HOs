@@ -1,0 +1,3 @@
+defaults:
+  - parameters: simple_oscillator
+  - dirs: simple_oscillator
