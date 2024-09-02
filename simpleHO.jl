@@ -1,4 +1,4 @@
-using Plots
+using Plots, Interact
 using Blink: Window, body!
 using YAML
 w = Window()
@@ -24,12 +24,13 @@ function plot_harmonic_oscillator(k, m, x0, v0, t_start, t_end, num_points)
     x,p = harmonic_oscillator(k, m, x0, v0, t)
     plot(t, x, xlabel="Time", label="Position", lw=2, frame=:box)
     plot!(t, p, xlabel="Time", label="Momentum", lw=2, frame=:box)
+    plot!(size=(500,400))
 end
 
 ui = @manipulate for x0 in 0:0.01:1, v0 in 0.0:0.01:1.0, 
     t_end in 1:0.1:10, k in 0.1:0.01:1.0, m in 0.1:0.01:1.0, sav_fig in [false,true]
     f = plot_harmonic_oscillator(k, m, x0, v0, t_start, t_end, num_points)
-    sav_fig ? savefig(f, PATH*"harmonic_oscillator.png", size=(500,400)) : nothing
+    sav_fig ? savefig(f, PATH*"harmonic_oscillator.png") : nothing
     f
   end
   
